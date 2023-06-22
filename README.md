@@ -21,7 +21,7 @@ A Python application for parsing/managing Apache logs
 - Edit "Database name", "Active folder", "File mask". (if needed)
 
 ## 📝 Example: 
-- You can open it in different states:
+<p>You can open it in different states:</p>
 **Help**:
 </br>
 ```python main.py -h```
