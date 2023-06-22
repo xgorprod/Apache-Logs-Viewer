@@ -39,11 +39,20 @@ python main.py -a (**args)
 ## ⚙️ API Docs:
 1) Logs Viewer
 ``` Python
-params = filters: [, ...]
+viewer(filters: [, ...])
+usage:
 python main.py -a 1 [ip,status,bytes]
 ```
 2) Sort by IP/Date
 ``` Python
-params = sort_by: [ip/date] filters: [, ...] type: [asc/desc]
+sort_by(by: [ip/date] filters: [, ...] type: [asc/desc])
+usage:
 python main.py -a 2 ip [ip,date] desc
+```
+3) Group by IP+Status
+``` Python
+group_by_ip(ip status[optional] filters: [, ...])
+usage:
+python main.py -a 3 127.0.0.1 404
+python main.py -a 3 127.0.0.1 [line,status,date]
 ```
