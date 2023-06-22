@@ -3,11 +3,11 @@ A Python application for parsing/managing Apache logs
 
 ## ✅ Program modes:
 "-h" : Help
-<\br>
+</br>
 "-b" : Batch (cron)
-<\br>
+</br>
 "-i" : Interactive
-<\br>
+</br>
 "-a" : Api calls
    
 ## 💬 List of available functions:
@@ -32,7 +32,7 @@ Help:
 Batch:
 </br>
 ```python main.py -b```
-<br></br>
+</br>
 Interactive:
 </br>
 ```python main.py -i```
