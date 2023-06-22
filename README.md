@@ -18,7 +18,7 @@ A Python application for parsing/managing Apache logs
 - Edit "Database name", "Active folder", "File mask"
   
 ## 🛠️ Examples: 
-You can open it in different states: 
+Application can be opened in different states: 
 </br>
 ### Help: </br>
 ``` Python
@@ -37,4 +37,11 @@ python main.py -i
 python main.py -a (**args)
 ```
 ## ⚙️ API Docs:
-...
+1) Logs Viewer
+``` Python
+python main.py -a 1 filters: [, ...]
+```
+</br>
+``` Python
+python main.py -a 1 [ip,status,date]
+```
