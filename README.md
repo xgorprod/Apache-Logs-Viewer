@@ -34,7 +34,7 @@ python main.py -i
 ```
 ### API: </br>
 ``` Python
-python main.py -a (**args)
+python main.py -a <API function> <parameters>
 ```
 ## ⚙️ API Docs:
 1) Logs Viewer
