@@ -20,11 +20,11 @@ A Python application for parsing/managing Apache logs
 ## 📝 Example: 
 You can open it in different states: 
 <br> </br>
-Help: </br>
+# Help: </br>
 ``` Python
 python main.py -h
 ```
-Batch: </br>
+# Help: </br>
 ``` Python
 python main.py -b
 ```
