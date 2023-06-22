@@ -2,7 +2,9 @@
 A Python application for parsing/managing Apache logs
 
 ## ✅ Program modes:
-> -h, -b, -i, -a
+``` HTML
+-h, -b, -i, -a
+```
 
 ## 💬 List of available functions:
 - Logs Viewer
