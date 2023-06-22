@@ -16,7 +16,7 @@ A Python application for parsing/managing Apache logs
 
 ## ℹ️ Usage:
 ``` Python
-python main.py `[ -h | -b | -i | -a ]` [parameters]
+python main.py [ -h | -b | -i | -a ] [parameters]
 ```
 
 ## 🛠️ Launch info: 
