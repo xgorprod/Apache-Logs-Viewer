@@ -368,7 +368,7 @@ if interactive:
     while repeat:
         menu()
         choice = user_input("Enter a number of function: ", int); print()
-
+        if choice == "q": sys_exit(0)
         match choice:
             case 1:
                 database.viewer()
