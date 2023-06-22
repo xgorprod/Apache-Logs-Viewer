@@ -6,7 +6,7 @@ A Python application for parsing/managing Apache logs
 </br>
 "-b" : Batch (cron)
 </br>
-"-i" : Interactive
+"-i"  : Interactive
 </br>
 "-a" : Api calls
    
@@ -27,19 +27,19 @@ A Python application for parsing/managing Apache logs
 <p>You can open it in different states:</p>
 Help:
 </br>
-`python main.py -h`
+> python main.py -h
 </br>
 Batch:
 </br>
-`python main.py -b`
+> python main.py -b
 </br>
 Interactive:
 </br>
-`python main.py -i`
+> python main.py -i
 </br>
 API:
 </br>
-`python main.py -a (**args)`
+> python main.py -a (**args)
 
 ## ⚙️ API Docs:
 ...
