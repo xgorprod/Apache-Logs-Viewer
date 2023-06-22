@@ -43,7 +43,7 @@ There are 4 API functions that allow to get JSON with log information and apply 
 1) Logs Viewer
 
 Function returns JSON with all logs. </br>
-Parameters: list of output fields: [ip,name,user,line,status,bytes,date]
+Parameters: list of output fields: `[ip,name,user,line,status,bytes,date]` </br>
 You should specify one or more fields in brackets, empty list = all fields.
 
 Get all logs and return ip, status and bytes:
