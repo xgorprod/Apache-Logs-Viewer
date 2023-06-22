@@ -22,8 +22,10 @@ A Python application for parsing/managing Apache logs
 
 ## 📝 Example: 
 You can open it in different states:
+<br>
 Help:
 > python main.py -h
+</br>
 Batch:
 > python main.py -b
 Interactive:
