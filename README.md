@@ -40,19 +40,26 @@ python main.py -a (**args)
 1) Logs Viewer
 ``` Python
 viewer(filters: [, ...])
-usage:
+
 python main.py -a 1 [ip,status,bytes]
 ```
 2) Sort by IP/Date
 ``` Python
 sort_by(by: [ip/date] filters: [, ...] type: [asc/desc])
-usage:
+
 python main.py -a 2 ip [ip,date] desc
 ```
 3) Group by IP+Status
 ``` Python
 group_by_ip(ip status[optional] filters: [, ...])
-usage:
+
 python main.py -a 3 127.0.0.1 404
 python main.py -a 3 127.0.0.1 [line,status,date]
+```
+4) Group by Dates
+``` Python
+group_by_date(date date2[optional] filters: [, ...])
+
+python main.py -a 4 2023-06-02 2023-07-02
+python main.py -a 4 2023-06-02 [ip,status,bytes]
 ```
