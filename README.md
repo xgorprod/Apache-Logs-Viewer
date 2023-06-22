@@ -14,8 +14,8 @@ A Python application for parsing/managing Apache logs
 
 ## 🔓 Installation:
 - Open setup.bat to import libraries.
-- Open settings.py
-- Edit "Database name", "Active folder", "File mask". (if needed)
+- Open settings.py for customization
+- Edit "Database name", "Active folder", "File mask"
 
 ## 📝 Example: 
 You can open it in different states: 
