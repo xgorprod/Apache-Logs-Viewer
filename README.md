@@ -17,7 +17,7 @@ A Python application for parsing/managing Apache logs
 - Open settings.py for customization
 - Edit "Database name", "Active folder", "File mask"
 
-## 📝 Example: 
+## 📝 Launch examples: 
 You can open it in different states: 
 </br>
 ### Help: </br>
