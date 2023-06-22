@@ -19,7 +19,7 @@ A Python application for parsing/managing Apache logs
 
 ## 📝 Example: 
 You can open it in different states: </br>
-Help:
+<p>Help:</p>
 ``` Python
 python main.py -h
 ```
