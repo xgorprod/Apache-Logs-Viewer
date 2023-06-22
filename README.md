@@ -2,9 +2,7 @@
 A Python application for parsing/managing Apache logs
 
 ## ✅ Program modes:
-``` HTML
--h, -b, -i, -a
-```
+`-h, -b, -i, -a`
 
 ## 💬 List of available functions:
 - Logs Viewer
@@ -22,13 +20,21 @@ A Python application for parsing/managing Apache logs
 ## 📝 Example: 
 <p>You can open it in different states:</p>
 Help:
-```python main.py -h```
+``` Python
+python main.py -h
+```
 Batch:
-```python main.py -b```
+``` Python
+python main.py -h
+```
 Interactive:
-```python main.py -i```
+``` Python
+python main.py -h
+```
 API:
-```python main.py -a (**args)```
+``` Python
+python main.py -h
+```
 
 ## ⚙️ API Docs:
 ...
