@@ -39,9 +39,11 @@ python main.py -a (**args)
 ## ⚙️ API Docs:
 1) Logs Viewer
 ``` Python
-python main.py -a 1 filters: [, ...]
+params = filters: [, ...]
+python main.py -a 1 [ip,status,bytes]
 ```
-e.g:
+2) Sort by IP/Date
 ``` Python
-python main.py -a 1 [ip,status,date]
+params = sort_by: [ip/date] filters: [, ...] type: [asc/desc]
+python main.py -a 2 ip [ip,date] desc
 ```
