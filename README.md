@@ -37,7 +37,10 @@ python main.py -i
 python main.py -a <number of a function> <parameters>
 ```
 ## ⚙️ API Docs:
-[1] Logs Viewer
+
+There are 4 API functions.
+
+1) Logs Viewer
 ``` Python
 viewer(filters: [, ...])
 
