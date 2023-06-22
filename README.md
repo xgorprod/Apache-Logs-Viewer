@@ -2,14 +2,14 @@
 A Python application for parsing/managing Apache logs
 
 ## ✅ Program modes:
-"-h" : Help
+-h : Help
 </br>
-"-b" : Batch (cron)
+-b : Batch (cron)
 </br>
-"-i"  : Interactive
+-i : Interactive
 </br>
-"-a" : Api calls
-   
+-a : Api calls
+
 ## 💬 List of available functions:
 - Logs Viewer
 - Sort by IP/Date
