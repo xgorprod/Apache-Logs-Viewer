@@ -7,7 +7,7 @@ from rich.progress import track
 db_name = "db/database.sqlite"
 active_folder = "apache"
 file_mask = "*.log"
-redirect = ''
+
 
 # Functions region
 # enable_print = print
@@ -106,9 +106,10 @@ def create_json(switch, data, req_filter):
 
 # Variables region
 parser = LogParser("%h %l %u %t \"%r\" %>s %b")
-answers = ['y', "yes", "+", '']
 
 repeat = True
+redirect = ''
+answers = ['y', "yes", "+", '']
 argv = sys.argv
 cmd_param = '-h'
 cmd_param = len(argv) > 1 and argv[1] or '-h'
