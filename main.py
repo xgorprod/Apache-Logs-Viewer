@@ -59,16 +59,17 @@ class Files:
 class Database:
     def __init__(self, db):
         self.__db = db
-        if not help:
+        if not help and not api_mode:
             print(f"Connecting to '{db}'.")
         self.__con = sqlite3.connect(db, check_same_thread = False)
         self.__cur = self.connection.cursor()
         try: time.sleep(1)
         except: ...
-        if not help:
+        if not help and not api_mode:
             print(f"Successfuly connected.")
         try: time.sleep(0.5)
         except: ...
+
         clear()
 
         try: # create table on startup
@@ -229,9 +230,6 @@ if not batch_mode and not interactive and not help:
 
 database = Database(db_name) # bypassing prints in db connection
 
-welcome()
-state()
-
 if api_mode: #TODO: Реализовать вызовы без повторения функций из класса БД. 
     api = Api(database)
     ln = len(argv)
@@ -260,7 +258,6 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
             apply = ln > 4 and argv[4][1:-1] or "-"
             req_filter = apply.split(",")
             order = ln > 5 and argv[5] or "asc"
-            print(sort_type, apply, order)
             logs = api.sort_by(sort_type, apply, order)
             try: 
                 output = create_json(apply, logs, req_filter)
@@ -281,9 +278,7 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
             apply = (ln > 4 and argv[-1][0] == "[") and argv[-1][1:-1] or "-"
             req_filter = apply.split(",")
 
-            print(exact_ip, status, apply)
             logs = api.group_by_ip(exact_ip, status, apply)
-
             try: 
                 output = create_json(apply, logs, req_filter)
                 print_json(output)
@@ -303,28 +298,30 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
 
             apply = (ln > 4 and argv[-1][0] == "[") and argv[-1][1:-1] or "-"
             req_filter = apply.split(",")
-
-            print(exact_date, arg2, apply)
             logs = api.group_by_date(exact_date, arg2, apply)
-
             try: 
                 output = create_json(apply, logs, req_filter)
                 print_json(output)
             except Exception: json_err()
+        case _:
+            print("Incorrect parameters. See documentation. \n")
+            quit()
+    
+welcome()
+state()
 
 if help: 
     helper()
-    redirect = user_input(""); clear()
+    redirect = user_input("To continue, you can enter -i or -b: ")
     batch_mode = redirect == "-b"
     interactive = redirect == "-i"
     api_mode = redirect == "-a"
 
     if api_mode: 
         print("Apache Log Viewer API:\n\nShould be accessed with command line argument!")
-        any_key()
 
     if batch_mode or interactive:
-        welcome(); print(); help = False
+        help = False; print(); 
 
 files = Files(active_folder, file_mask)
 
@@ -357,7 +354,6 @@ def update_logs(db, to):
 
 if batch_mode:
     update_logs(database, files.active_files(True))
-    any_key()
 
 if interactive:
     try:

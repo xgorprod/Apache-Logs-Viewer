@@ -8,10 +8,7 @@ db_name = "db/database.sqlite"
 active_folder = "apache"
 file_mask = "*.log"
 
-
 # Functions region
-# enable_print = print
-# disable_print = lambda *x, **y: None
 
 def sys_exit(delay=1):
     try: time.sleep(delay)
@@ -31,10 +28,10 @@ def user_input(msg=None, f=str):
         quit()
     except EOFError:
         print('\nSee ya! ⋖|︶。︶|⋗')
-        sys_exit()
+        quit()
     except Exception as e:
         print(e)
-        sys_exit()
+        quit()
 
 def init(db, on_upd=False):
     # useless, but it makes the program look more solid.
@@ -72,15 +69,14 @@ def str_trim(string):
     return res
 
 def print_json(arr):
-    clear()
     print("{")
     for el in arr: print(f'   {el},')
     print("}")
-    any_key()
+    quit()
     
 def json_err(): 
     print("{\n}")
-    any_key()
+    quit()
 
 def create_json(switch, data, req_filter):
     res = []
@@ -123,7 +119,12 @@ api_function = (api_mode and len(argv) > 2) and argv[2] or 0
 hvar = ["-h", "--help", "help"]
 help = cmd_param in hvar
 
-clear = lambda: os.system('cls')
+all_params = ["-i", "-h", "-b", "-a"]
+
+if api_mode or help or cmd_param not in all_params:
+    clear = lambda: ... 
+else:
+    clear = lambda: os.system('cls')
 
 fields_dict = {
     "ip" : "remote_host",
@@ -142,7 +143,8 @@ goodbye_msg = 'Thanks for using Apache Logs Viewer! <3\nPress any key to exit.'
 help_msg = "\nAvailable command line arguments:\n\
 -i = interactive mode\n\
 -b = batch mode (cron)\n\
--a = api calls\n"
+-a = api calls\n\
+More details and examples in README.md\n"
 
 menu_msg = 'List of available functions:\n\
 1) Logs Viewer\n\
