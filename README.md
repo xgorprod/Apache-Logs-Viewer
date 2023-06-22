@@ -43,7 +43,7 @@ There are 4 API functions that allow to get JSON with log information and apply 
 1) Logs Viewer
 
 - Parameters: list of output fields: `[ip,name,user,line,status,bytes,date]` </br>
-- You should specify one or more fields in brackets, empty list = all fields.
+<h5> You should specify one or more fields in brackets, empty list = all fields. </h5> 
 
 **Example**: *return ip, status and bytes:*
 ``` Python
@@ -52,7 +52,7 @@ python main.py -a 1 [ip,status,bytes]
 2) Sort by IP/Date
 
 - Parameters: sort by: **IP** or **DATE**, list of output fields: `[ip,name,user,line,status,bytes,date]`, sort order: **ASC** or **DESC** </br>
-- You should specify one or more fields in brackets, empty list = all fields.
+You should specify one or more fields in brackets, empty list = all fields. </h5>
 
 **Example**: *return ip, date sorted by ip descending:*
 ``` Python
