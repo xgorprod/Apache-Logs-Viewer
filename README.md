@@ -1,5 +1,5 @@
 # Apache-Logs-Viewer 🔎
-A Python application for parsing/managing Apache logs
+A Python application for parsing/storing/reading Apache logs
 
 ## 💬 List of available functions:
 - Logs Viewer
@@ -10,9 +10,11 @@ A Python application for parsing/managing Apache logs
 - Load logs to DB
 
 ## 📝 Installation:
-- Open setup.bat to import libraries.
-- Open settings.py for customization
-- Edit "Database name", "Active folder", "File mask"
+- Open `setup.bat` to import libraries.
+- Open `settings.py` for customization 
+  - `db_name` - filename of the database
+  - `active_folder` - folder with Apache logs
+  - `file_mask` - mask of files to parse
 
 ## ℹ️ Usage:
 ``` Python
