@@ -41,6 +41,7 @@ python main.py -a (**args)
 ``` Python
 python main.py -a 1 filters: [, ...]
 ```
+e.g:
 ``` Python
 python main.py -a 1 [ip,status,date]
 ```
