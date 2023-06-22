@@ -19,16 +19,13 @@ A Python application for parsing/managing Apache logs
 
 ## 📝 Example: 
 <p>You can open it in different states:</p>
-Help: </br>
+Help:
 ```python main.py -h```
-</br>
-Batch: </br>
+Batch:
 ```python main.py -b```
-</br>
-Interactive: </br>
+Interactive:
 ```python main.py -i```
-</br>
-API: </br>
+API:
 ```python main.py -a (**args)```
 
 ## ⚙️ API Docs:
