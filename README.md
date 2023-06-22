@@ -45,7 +45,7 @@ There are 4 API functions that allow to get JSON with log information and apply 
 Parameters: list of output fields: `[ip,name,user,line,status,bytes,date]` </br>
 You should specify one or more fields in brackets, empty list = all fields.
 
-Example: return ip, status and bytes:
+**Example**: *return ip, status and bytes:*
 ``` Python
 python main.py -a 1 [ip,status,bytes]
 ```
