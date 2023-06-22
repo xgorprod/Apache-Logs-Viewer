@@ -38,12 +38,16 @@ python main.py -a <number of a function> <parameters>
 ```
 ## ⚙️ API Docs:
 
-There are 4 API functions.
+There are 4 API functions that allow to get JSON with log information and apply filters.
 
 1) Logs Viewer
-``` Python
-viewer(filters: [, ...])
 
+Function returns JSON with all logs. </br>
+Parameters: list of output fields: [ip,name,user,line,status,bytes,date]
+You should specify one or more fields in brackets, empty list = all fields.
+
+Get all logs and return ip, status and bytes:
+``` Python
 python main.py -a 1 [ip,status,bytes]
 ```
 2) Sort by IP/Date
