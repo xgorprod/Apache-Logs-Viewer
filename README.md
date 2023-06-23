@@ -1,5 +1,5 @@
 # Apache-Logs-Viewer 🔎
-A Python application for parsing/storing/reading Apache logs
+A Python application for parsing/storing/reading Apache access logs
 
 ## 💬 List of available functions:
 - Logs Viewer
