@@ -1,5 +1,5 @@
+import msvcrt
 import sys, os, time
-import msvcrt # checks input chars w/o pressing enter
 from apachelogs import LogParser
 from rich.progress import track
 
@@ -9,7 +9,6 @@ active_folder = "apache"
 file_mask = "*.log"
 
 # Functions region
-
 def sys_exit(delay=1):
     try: time.sleep(delay)
     except: ...
@@ -34,7 +33,6 @@ def user_input(msg=None, f=str):
         quit()
 
 def init(db, on_upd=False):
-    # useless, but it makes the program look more solid.
     n = db.rows or 1
     speed = n < 3000 and n/(n*n) or (n/(n*n))/n 
 
@@ -58,7 +56,7 @@ def state():
     if interactive or str(redirect) == '-i': msg = "Interactive mode"
     if msg: print(f'\n# Currently in {msg}.\n')
 
-def any_key():
+def any_key(): # checks input chars w/o pressing enter
     if msvcrt.getch():
         quit()
 
@@ -102,22 +100,19 @@ def create_json(switch, data, req_filter):
 
 # Variables region
 parser = LogParser("%h %l %u %t \"%r\" %>s %b")
+#ex_parser = LogParser("%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"")
 
 repeat = True
 redirect = ''
 answers = ['y', "yes", "+", '']
 argv = sys.argv
-cmd_param = '-h'
 cmd_param = len(argv) > 1 and argv[1] or '-h'
 
+help = cmd_param == "-h"
 batch_mode = cmd_param == "-b" or redirect == "-b"
 interactive = cmd_param == "-i" or redirect == "-i"
-
 api_mode = cmd_param == "-a"
 api_function = (api_mode and len(argv) > 2) and argv[2] or 0
-
-hvar = ["-h", "--help", "help"]
-help = cmd_param in hvar
 
 all_params = ["-i", "-h", "-b", "-a"]
 

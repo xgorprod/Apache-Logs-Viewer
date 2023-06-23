@@ -1,18 +1,3 @@
-# TODO:
-# Разбор логов (+)
-# Парсинг логов (+)
-# Просмотр логов по сортировке (+)
-# Список полей для вывода (+)
-# Настройка в файле (+)
-# Ручной ввод ip+status (+)
-# Если не нашли бд -> создание новой + create_table (+)
-# "-i -b -r" params (+)
-
-# api_viewer (+)
-# api_sort_by (+)
-# api_group_by_ip (+)
-# api_group_by_date (+)
-
 import time, sqlite3
 from glob import glob
 from settings import *; clear()
@@ -48,13 +33,12 @@ class Files:
         return target
 
     def log_parser(self, cur_file) -> list:
-        res = []
-        with open(cur_file, "r") as f:   
+        res = []        
+        with open(cur_file, "r") as f:
             for e in parser.parse_lines(f):
                 res.append(parser.parse(e.entry))
 
         return res
-
 
 class Database:
     def __init__(self, db):
@@ -152,15 +136,6 @@ class Database:
         self.query(req, True)
         print()
 
-    def api_viewer(self, filters=None):
-        if filters is None: filters = "-"
-        apply = self.apply_filters(filters)
-        prompt = apply[0] != ''
-        fields = apply[1]
-        req = f"SELECT {prompt and fields or '*'} FROM Logs"
-        self.query(req)
-        return self.cursor.fetchall()
-
     def sort_by(self, arg1=None, sort_type="ASC"):
         if not arg1: return 
 
@@ -228,9 +203,9 @@ class Database:
 if not batch_mode and not interactive and not help:
     help = True
 
-database = Database(db_name) # bypassing prints in db connection
+database = Database(db_name)
 
-if api_mode: #TODO: Реализовать вызовы без повторения функций из класса БД. 
+if api_mode:
     api = Api(database)
     ln = len(argv)
 
@@ -238,7 +213,7 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
     except Exception: quit()
 
     match switch:
-        # @api_viewer(filters)
+        # @api_viewer(fields)
         case 1: 
             apply = ln > 3 and argv[3][1:-1] or "-"
             req_filter = apply.split(",")
@@ -249,7 +224,7 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
             except Exception: 
                 json_err()
 
-        # @api_sort_by(sort_column, filters, asc/desc)
+        # @api_sort_by(sort_column, fields, asc|desc)
         case 2:
             if ln <= 3: 
                 json_err()
@@ -264,7 +239,7 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
                 print_json(output)
             except Exception: json_err()
 
-        # @api_group_by_ip(exact_ip, status, filters)
+        # @api_group_by_ip(exact_ip, status, fields)
         case 3: 
             if ln < 4: 
                 json_err()
@@ -284,7 +259,7 @@ if api_mode: #TODO: Реализовать вызовы без повторен�
                 print_json(output)
             except Exception: json_err()
 
-        # @api_group_by_date(exact_date, second_date, filters)
+        # @api_group_by_date(exact_date, second_date, fields)
         case 4: 
             if ln < 4: 
                 json_err()
